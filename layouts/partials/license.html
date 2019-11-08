@@ -1,0 +1,10 @@
+{{ if isset .Params "license" }}
+Content in this page is licensed under the &#32;
+{{- if eq .Params.license "cc-by" -}}
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0">CC-BY 4.0</a>
+{{- else if eq .Params.license "cc-by-sa" -}}
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0">CC-BY-SA 4.0</a>
+{{- else if eq .Params.license "cc-by-nc" -}}
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0">CC-BY-NC 4.0</a>
+{{- end -}} &#32; |
+{{ end }}
