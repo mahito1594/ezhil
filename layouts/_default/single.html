@@ -7,7 +7,12 @@
 
 		<div class="post-header">
 			<h1 class="title">{{ .Title }}</h1>
+			{{ if not (in .Params.hidedates "date") }}
 			<div class="meta">Posted at &mdash; {{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</div>
+			{{ end }}
+			{{ if not (in .Params.hidedates "lastmod") }}
+			<div class="meta">Updated at &mdash; {{ dateFormat "Jan 2, 2006" .Lastmod }}</div>
+			{{ end }}
 		</div>
 
 		<div class="markdown">
